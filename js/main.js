@@ -8,9 +8,23 @@ $(function () {
     });
 
     $('.menu__btn').on('click', function () {
-        $('.menu__list').toggleClass('menu__list--active');
-    });
+        const menuList = document.querySelectorAll('.menu__item');
+        console.log('11');
+        if (menuList[0].style.transform === "translateX(300px)") {
+            for (let i = 0; i < menuList.length; i++) {
+                setTimeout(function () {
+                    menuList[i].style.transform = "translateX(0px)";
+                }, 250 * i)
+            }
+        } else {
+            for (let i = 0; i < menuList.length; i++) {
+                setTimeout(function () {
+                    menuList[i].style.transform = "translateX(300px)";
+                }, 250 * i)
+            }
+        }
 
+    });
     $('.categories__title').on('click', function () {
         $('.categories__list').toggleClass('categories__list--active');
     });
