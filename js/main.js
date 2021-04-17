@@ -10,7 +10,9 @@ $(function () {
     $('.menu__btn').on('click', function () {
         const menuList = document.querySelectorAll('.menu__item');
         console.log('11');
-        if (menuList[0].style.transform === "translateX(300px)") {
+        let b = menuList[0].style.transform;
+
+        if (menuList[0].style.transform === "translateX(300px)" || menuList[0].style.transform === "") {
             for (let i = 0; i < menuList.length; i++) {
                 setTimeout(function () {
                     menuList[i].style.transform = "translateX(0px)";
